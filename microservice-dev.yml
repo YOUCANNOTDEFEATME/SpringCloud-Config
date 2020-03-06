@@ -1,6 +1,6 @@
 jdbc: 
   driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://127.0.0.1:6666/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
+  url: jdbc:mysql://127.0.0.1:8888/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
   username: root
   password: 123456
 
