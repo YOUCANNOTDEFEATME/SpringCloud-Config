@@ -1,0 +1,19 @@
+zuul:
+  routes: #定义服务转发规则
+    eureka-client-1:
+      path: /eureka-client-controller-1/** #eureka-client-1这个名字是任意写的,尽量和业务逻辑挂沟
+      # 这里设置前缀zuul将会把path拼接上去
+      # 比如 原本微服务服务地址如：http://localhost:8999/eureka-client-controller-1/conversation
+      # 开启前缀true 然后就zuul就会拼接上，成为：http://localhost:8999/eureka-client-controller-1/eureka-client-controller-1/conversation
+      # 那么实际上访问地址是： http://localhost:8999/eureka-client-controller-1/eureka-client-controller-1/conversation 这样才能通过zuul 访问原来的微服务
+      strip-prefix: true
+      #path: /v/** #匹配item-service的请求app-item服务
+      #url: http://127.0.0.1:8101 #真正的微服务地址
+      #serviceid: eureka-client-1
+  host:
+    socket-timeout-millis: 6000
+    connect-timeout-millis: 6000
+    max-total-connections: 6000
+    # 忽略的服务多个之间哟逗号隔开
+  ignored-services: eureka-client-1
+  ignored-patterns: 
