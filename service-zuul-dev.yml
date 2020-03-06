@@ -1,7 +1,7 @@
 zuul:
   routes: #定义服务转发规则
     eureka-client-1:
-      path: /v/** #eureka-client-1这个名字是任意写的,尽量和业务逻辑挂沟
+      path: /eureka-client-controller-1/** #eureka-client-1这个名字是任意写的,尽量和业务逻辑挂沟
       # 这里设置前缀zuul将会把path拼接上去
       # 比如 原本微服务服务地址如：http://localhost:8999/eureka-client-controller-1/conversation
       # 开启前缀true 然后就zuul就会拼接上，成为：http://localhost:8999/eureka-client-controller-1/eureka-client-controller-1/conversation
